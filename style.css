@@ -1,0 +1,184 @@
+/* ===== ESTILO GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== ENCABEZADO ===== */
+header {
+  background-color: #b30000;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav {
+  position: relative;
+}
+
+#btnMenu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#menu li {
+  position: relative;
+}
+
+#menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#menu a:hover {
+  color: #ffcccc;
+}
+
+/* ===== SUBMENÚ ===== */
+#menu li ul {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #333;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  padding: 8px 0;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+#menu li:hover ul {
+  display: block;
+}
+
+#menu li ul li a {
+  color: #b30000;
+  padding: 8px 15px;
+  display: block;
+}
+
+#menu li ul li a:hover {
+  background-color: #ffe5e5;
+}
+
+/* ===== PANEL ADMIN ===== */
+main {
+  flex: 1;
+  padding: 40px;
+  background-color: #fffafa;
+}
+
+#panel {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#panel h2 {
+  color: #b30000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#formMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#formMenu input,
+#formMenu select,
+#formMenu button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#formMenu input:focus,
+#formMenu select:focus {
+  outline: none;
+  border-color: #b30000;
+}
+
+#formMenu button {
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formMenu button:hover {
+  background-color: #d10000;
+}
+
+/* ===== MENÚ MÓVIL ===== */
+@media (max-width: 768px) {
+  #btnMenu {
+    display: block;
+  }
+
+  #menu {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #b30000;
+    width: 200px;
+    padding: 15px;
+    display: none;
+  }
+
+  #menu.active {
+    display: flex;
+  }
+
+  #menu li ul {
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  #menu li ul li a {
+    color: #fff;
+  }
+
+  #menu li ul li a:hover {
+    background-color: rgba(255,255,255,0.15);
+  }
+}
